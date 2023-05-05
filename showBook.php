@@ -48,7 +48,7 @@
                 echo "<h4>Data de publicação</h4>";
                 echo "<p>" . $bookData["bookReleaseDate"] . ".</p>";
                 echo "<a href = 'library.php' target = '_blank'><button id = 'button01' type = 'button'>Voltar</button></a> ";
-                echo "<a href = '" . $bookData["bookShopLink"] . "' target = '_blank'><button id = 'button01' type = 'button'>Comprar</button></a><br><br>";
+                echo "<a href = '" . $bookData["bookShopLink"] . "'><button id = 'button01' type = 'button'>Comprar</button></a><br><br>";
 
                 $dbConnection->close();
             
