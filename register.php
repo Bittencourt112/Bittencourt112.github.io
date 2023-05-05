@@ -22,7 +22,7 @@
 
             }
 
-            if(strlen($_POST["inputPhoneNumber"]) > 8){
+            if(strlen($_POST["inputPhoneNumber"]) > 10){
                 $webUserPhoneNumber = $dbConnection->real_escape_string($_POST["inputPhoneNumber"]);
 
                 $sucess++;
