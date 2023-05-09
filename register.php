@@ -93,16 +93,18 @@
     </head>
     <body>
         <div class = "div01">
-            <h1>MyBookBase</h1>
-            <h3>Gerenciamento de livros</h3>
-            <h4>Preencha os campos com seus dados</h4>
+            <h2>MyBookBase</h2>
+            <hr>
+            <h3>Gerencie seus livros online</h3>
+            <hr>
+            <h4>Cadastro</h4>
             <form action = "" method = "POST">
                 <input id = "input01" type = "text" name = "inputName" placeholder = "Digite o seu nome"><br><br>
                 <input id = "input01" type = "number" name = "inputPhoneNumber" placeholder="Digite o seu telefone"><br><br>
                 <input id = "input01" type = "email" name = "inputEmail" placeholder = "Digite o seu email"><br><br>
                 <input id = "input01" type = "password" name = "inputPassword" placeholder = "Digite sua senha"><br><br>
                 <a href= "login.php"><button id = "button01" type= "button">Fazer login</button></a>
-                <input id = "button01" type = "submit" value = "Cadastrar">
+                <input id = "button01" type = "submit" value = "Enviar">
             </form><br>
         </div>
     </body>

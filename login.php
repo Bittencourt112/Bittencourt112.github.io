@@ -72,16 +72,18 @@
     </head>
     <body>
         <div class = "div01">
-            <h1>MyBookBase</h1>
-            <h3>Gerenciamento de livros</h3>
-            <h4>Faça o login</h4>
+            <h2>MyBookBase</h2>
+            <hr>
+            <h3>Gerencie seus livros online</h3>
+            <hr>
+            <h4>Login</h4>
             <form action = "" method = "POST">
                 <input id = "input01" type = "email" name = "inputEmail" placeholder = "Digite o seu email"><br><br>
                 <input id = "input01" type = "password" name = "inputPassword" placeholder = "Digite sua senha"><br><br>
                 <a href = "register.php"><button id = "button01" type = "button">Fazer cadastro</button></a>
                 <input id = "button01" type = "submit" value = "Entrar">
             </form>
-            <h4><a id = "loginHelp01" href = "mailto:thiagobittencourt112@rede.ulbra.br">Esqueceu sua senha? Entre em contato</a></h4><br>
+            <h4><a id = "loginHelp01" href = "mailto:thiagobittencourt112@rede.ulbra.br">Esqueceu a senha?</a></h4><br>
         </div>
     </body>
 </html>

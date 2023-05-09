@@ -21,24 +21,25 @@
         <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
-        <div class = "div02">
-            <h1>MyBookBase</h1>
-            <a href = "home.php"><button id = "button01" type = "button">Inicio</button></a>
+        <div class = "div01">
+            <h2>MyBookBase</h2>
+            <a href = "home.php"><button id = "button01" type = "button">Início</button></a>
             <a href = "library.php"><button id = "button01" type = "button">Biblioteca</button></a>
             <a href = "profile.php"><button id = "button01" type = "button">Perfil</button></a>
             <a href = "support.php"><button id = "button01" type = "button">Ajuda</button></a>
             <a href = "logout.php"><button id = "button01" type = "button">Sair</button></a>
             <h4>Bem vindo, <?php echo $_SESSION["userName"];?>!</h4><br>
             <hr>
-            <h3>Sua biblioteca</h3>
-            <a href = "addBook.php"><button id = "button01" type = "button">Adicionar livro</button></a>
-            <a href = "modifyBook.php"><button id = "button01" type = "button">Modificar livro</button></a>
-            <a href = "removeBook.php"><button id = "button01" type = "button">Remover livro</button></a><br><br><br>
+            <h3>Biblioteca</h3>
+            <hr><br>
+            <a href = "addBook.php"><button id = "button01" type = "button">Adicionar livros</button></a>
+            <a href = "modifyBook.php"><button id = "button01" type = "button">Modificar livros</button></a>
+            <a href = "removeBook.php"><button id = "button01" type = "button">Remover livros</button></a><br><br><br>
             <form action = "" method = "POST">
                 <input id = "input01" type = "text" name = "inputBookSearch" placeholder = "Digite o nome do livro">
                 <input id = "button01" type = "submit" value = "Pesquisar">
             </form><br>
-            <hr>
+            <h4>Resultados</h4>
             <?php
                 if(isset($_POST["inputBookSearch"])){
                     if(strlen($_POST["inputBookSearch"]) != 0 || $_POST["inputBookSearch"] != null){
@@ -96,7 +97,7 @@
                 $dbConnection->close();
                 
             ?>
-            <br>
+            <br><br>
         </div>
     </body>
 </html>

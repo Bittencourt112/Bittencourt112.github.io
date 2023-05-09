@@ -145,23 +145,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Modificar perfil - MyBookBase</title>
+        <title>Modificar dados - MyBookBase</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
-        <div class = "div02">
-            <h1>MyBookBase</h1>
-            <a href = "home.php"><button id = "button01" type = "button">Inicio</button></a>
+        <div class = "div01">
+            <h2>MyBookBase</h2>
+            <a href = "home.php"><button id = "button01" type = "button">Início</button></a>
             <a href = "library.php"><button id = "button01" type = "button">Biblioteca</button></a>
             <a href = "profile.php"><button id = "button01" type = "button">Perfil</button></a>
             <a href = "support.php"><button id = "button01" type = "button">Ajuda</button></a>
             <a href = "logout.php"><button id = "button01" type = "button">Sair</button></a>
             <h4>Bem vindo, <?php echo $_SESSION["userName"];?>!</h4><br>
             <hr>
-            <h3>Seus dados</h3>
+            <h3>Modificar dados</h3>
+            <hr>
             <h4>Preencha com novas informações somente os campos que deseja atualizar</h4>
             <form action = "" method = "POST">
                 <input id = "input01" type = "text" name = "inputNewName" placeholder = "Novo nome"><br><br>
