@@ -1,6 +1,15 @@
 body {
     font-family: arial;
-    background-color: rgba(50%, 50%, 50%, 0.1);
+    background-color: rgba(0%, 45%, 50%, 0.1);
+
+}
+
+.div00 {
+    background-color: rgba(100%, 100%, 100%, 1);
+    text-align: center;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -18,26 +27,26 @@ h2 {
 }
 
 h3 {
-    color: rgba(0%, 0%, 0%, 0.8);
+    color: rgba(0%, 45%, 50%, 1);
 
 }
 
 h4 {
-    color: rgba(0%, 0%, 0%, 0.8);
+    color: rgba(0%, 20%, 25%, 1);
 
 }
 
 hr {
-    width: 800px;
-    background-color: rgba(0%, 0%, 0%, 0.8);
-    color: rgba(0%, 0%, 0%, 0.8);
+    width: 500px;
+    background-color: rgba(0%, 20%, 25%, 1);
+    color: rgba(0%, 20%, 25%, 1);
     border: 0;
     height: 1px;
 
 }
 
 p {
-    color: rgba(0%, 0%, 0%, 0.6);
+    color: rgba(0%, 20%, 25%, 0.8);
     text-align: justify;
     width: fit-content;
     margin-left: auto;
@@ -47,14 +56,14 @@ p {
 }
 
 #input01 {
-    background-color: rgba(50%, 50%, 50%, 0.1);
+    background-color: rgba(0%, 45%, 50%, 0.1);
     border: 0;
     padding: 10px;
 
 }
 
 input::placeholder{
-    color: rgba(0%, 0%, 0%, 0.5);
+    color: rgba(0%, 20%, 25%, 0.8);
     font-weight: bold;
 
 }
@@ -70,7 +79,7 @@ input::placeholder{
 }
 
 #loginHelp01 {
-    color: rgba(0%, 0%, 0%, 0.8);
+    color: rgba(0%, 20%, 25%, 0.8);
 
 }
 
@@ -85,7 +94,7 @@ ul {
 }
 
 li {
-    color: rgba(0%, 0%, 0%, 0.6);
+    color: rgba(0%, 20%, 25%, 0.8);
     text-align: justify;
 
 }

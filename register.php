@@ -92,11 +92,9 @@
         <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
-        <div class = "div01">
+        <div class = "div00">
             <h2>MyBookBase</h2>
-            <hr>
             <h3>Gerencie seus livros online</h3>
-            <hr>
             <h4>Cadastro</h4>
             <form action = "" method = "POST">
                 <input id = "input01" type = "text" name = "inputName" placeholder = "Digite o seu nome"><br><br>
