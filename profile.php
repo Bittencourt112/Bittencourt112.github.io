@@ -22,13 +22,19 @@
     </head>
     <body>
         <div class = "div01">
-            <h2>MyBookBase</h2>
-            <a href = "home.php"><button id = "button01" type = "button">Início</button></a>
-            <a href = "library.php"><button id = "button01" type = "button">Biblioteca</button></a>
-            <a href = "profile.php"><button id = "button01" type = "button">Perfil</button></a>
-            <a href = "support.php"><button id = "button01" type = "button">Ajuda</button></a>
-            <a href = "logout.php"><button id = "button01" type = "button">Sair</button></a>
-            <h4>Bem vindo, <?php echo $_SESSION["userName"];?>!</h4><br>
+            <div class = "divTable">
+                <table>
+                    <tr>
+                        <td id = "mainTd">MyBookBase</td>
+                        <td><a id = "menuTd" href = "home.php">Início</a></td>
+                        <td><a id = "menuTd" href = "library.php">Biblioteca</a></td>
+                        <td><a id = "menuTd" href = "profile.php">Perfil</a></td>
+                        <td><a id = "menuTd" href = "support.php">Ajuda</a></td>
+                        <td><a id = "menuTd" href = "logout.php">Sair</a></td>
+                    </tr>
+                </table>
+            </div>
+            <h4>Olá, <?php echo $_SESSION["userName"];?>!</h4>
             <hr>
             <h3>Seus dados</h3>
             <hr>

@@ -35,7 +35,7 @@
 
             if($sucess > 1){
                 $sqlCode = "SELECT * FROM db_users WHERE userEmail = '$webUserEmail' AND userPassword = '$webUserPassword'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
 
                 if($sqlQuery->num_rows != 0){
                     $webUserData = $sqlQuery->fetch_assoc();
@@ -81,7 +81,7 @@
                 <a href = "register.php"><button id = "button01" type = "button">Fazer cadastro</button></a>
                 <input id = "button01" type = "submit" value = "Entrar">
             </form>
-            <h4><a id = "loginHelp01" href = "mailto:thiagobittencourt112@rede.ulbra.br">Esqueceu a senha?</a></h4><br>
+            <h4><a href = "helpLogin.php">Problemas com seu acesso?</a></h4><br>
         </div>
     </body>
 </html>

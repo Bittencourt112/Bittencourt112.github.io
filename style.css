@@ -19,6 +19,37 @@ body {
     
 }
 
+.divTable {
+    background-color: rgba(0%, 20%, 25%, 1);
+
+}
+
+table {
+    width: 100%;
+
+}
+
+td {
+    color: rgba(100%, 100%, 100%, 1);
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+
+}
+
+#menuTd {
+    color: rgba(100%, 100%, 100%, 1);
+    text-decoration: none;
+
+}
+
+#mainTd {
+    text-align: left;
+    font-size: x-large;
+    width: 80%;
+
+}
+
 h2 {
     background-color: rgba(0%, 20%, 25%, 1);
     color: rgba(100%, 100%, 100%, 1);
@@ -78,8 +109,8 @@ input::placeholder{
 
 }
 
-#loginHelp01 {
-    color: rgba(0%, 20%, 25%, 0.8);
+a {
+    color: rgba(0%, 20%, 25%, 1);
 
 }
 

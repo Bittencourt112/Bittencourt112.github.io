@@ -24,22 +24,29 @@
     </head>
     <body>
         <div class = "div01">
-            <h2>MyBookBase</h2>
-            <a href = "home.php"><button id = "button01" type = "button">Início</button></a>
-            <a href = "library.php"><button id = "button01" type = "button">Biblioteca</button></a>
-            <a href = "profile.php"><button id = "button01" type = "button">Perfil</button></a>
-            <a href = "support.php"><button id = "button01" type = "button">Ajuda</button></a>
-            <a href = "logout.php"><button id = "button01" type = "button">Sair</button></a>
-            <h4>Bem vindo, <?php echo $_SESSION["userName"];?>!</h4><br>
+            <div class = "divTable">
+                <table>
+                    <tr>
+                        <td id = "mainTd">MyBookBase</td>
+                        <td><a id = "menuTd" href = "home.php">Início</a></td>
+                        <td><a id = "menuTd" href = "library.php">Biblioteca</a></td>
+                        <td><a id = "menuTd" href = "profile.php">Perfil</a></td>
+                        <td><a id = "menuTd" href = "support.php">Ajuda</a></td>
+                        <td><a id = "menuTd" href = "logout.php">Sair</a></td>
+                    </tr>
+                </table>
+            </div>
+            <h4>Olá, <?php echo $_SESSION["userName"];?>!</h4>
             <hr>
             <h3>Ajuda</h3>
             <hr>
             <h4>Algum problema?</h4>
-            <p>Em caso de dificuldades com a plataforma ou precisar tirar alguma duvída a respeito de suas funcionalidades, aqui estão alguns meios para você realizar contato com o responsável.</p>
-            <h4>Emails para entrar em contato</h4>
-            <a href="mailto:thiagobittencourt112@gmail.com"><img src = "https://cdn-icons-png.flaticon.com/512/281/281769.png" width = "100" height = "100"></a>
-            <a href="mailto:thiagobit5@outlook.com"><img src = "https://cdn-icons-png.flaticon.com/512/732/732223.png" width = "100" height = "100"></a>
-            <a href="mailto:thiagobittencourt112@rede.ulbra.br"><img src = "https://seeklogo.com/images/U/ULBRA-logo-8262C7CDE1-seeklogo.com.png" width = "100" height = "100"></a><br><br>
+            <p>Em caso de dificuldades com a plataforma ou precisar tirar alguma duvída a respeito de suas funcionalidades, siga as intruções abaixo:</p>
+            <ul>
+                <li>Entre em contato com o seguinte <a href = "mailto:thiagobittencourt112@rede.ulbra.br" target = "_blank"><b>email</b></a> disponibilizado;</li>
+                <li>Repasse o seu endereço de email e telefone utilizados no cadastro da conta em questão;</li>
+                <li>Explique a sua situação no email e então aguarde pelo retorno do responsavél.</li>
+            </ul><br>
         </div>
     </body>
 </html>
