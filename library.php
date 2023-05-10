@@ -51,7 +51,7 @@
 
                             if($sqlQuery->num_rows != 0){
                                 while($row = mysqli_fetch_assoc($sqlQuery)){
-                                echo "<a href = 'showBook.php?id=" . $row["bookId"] . "' target = '_blank'><img src = '" . $row["bookImageLink"] . "' width = '200' height = '300'></a>";
+                                echo "<a href = 'showBook.php?id=" . $row["bookId"] . "'><img src = '" . $row["bookImageLink"] . "' width = '200' height = '300'></a>";
     
                                 }
                             }else{
