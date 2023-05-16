@@ -6,7 +6,7 @@
     }
 
     if(!isset($_SESSION["userId"])){
-        die("<h4>Você não está logado no sistema!</h4><a href = 'login.php'><h4>Entre por aqui</h4></a>");
+        header("Location: login.php");
     }
 
     $sucess = 0;
@@ -16,7 +16,7 @@
             $webOldBookTitle = $dbConnection->real_escape_string($_POST["inputOldBookTitle"]);
 
             $sqlCode = "SELECT * FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-            $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
             if($sqlQuery->num_rows != 0){
                 if(strlen($_POST["inputBookAuthor"]) != 0){
@@ -24,7 +24,7 @@
                         $webBookAuthor = $dbConnection->real_escape_string($_POST["inputBookAuthor"]);
 
                         $sqlCode = "UPDATE db_books SET bookAuthor = '$webBookAuthor' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -32,7 +32,7 @@
                         }
 
                     }else{
-                        echo "<h4>Novo nome de autor é muito pequeno!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Nome do autor precisa de ao menos 8 caracteres!');</script>";
 
                     }
 
@@ -43,7 +43,7 @@
                         $webBookSummary = $dbConnection->real_escape_string($_POST["inputBookSummary"]);
 
                         $sqlCode = "UPDATE db_books SET bookSummary = '$webBookSummary' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -51,7 +51,7 @@
                         }
 
                     }else{
-                        echo "<h4>Nova sinopse é muito pequena!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Sinopse precisa de ao menos 128 caracteres!');</script>";
 
                     }
 
@@ -62,7 +62,7 @@
                         $webBookPublisher = $dbConnection->real_escape_string($_POST["inputBookPublisher"]);
 
                         $sqlCode = "UPDATE db_books SET bookPublisher = '$webBookPublisher' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -70,7 +70,7 @@
                         }
 
                     }else{
-                        echo "<h4>Novo nome de editora é muito pequeno!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Nome da editora precisa de ao menos 4 caracteres!');</script>";
 
                     }
 
@@ -81,7 +81,7 @@
                         $webBookImageLink = $dbConnection->real_escape_string($_POST["inputBookImageLink"]);
 
                         $sqlCode = "UPDATE db_books SET bookImageLink = '$webBookImageLink' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -89,7 +89,7 @@
                         }
 
                     }else{
-                        echo "<h4>Novo link para capa é muito pequeno!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Link de imagem precisa de ao menos 16 caracteres!');</script>";
 
                     }
 
@@ -100,7 +100,7 @@
                         $webBookShopLink = $dbConnection->real_escape_string($_POST["inputBookShopLink"]);
 
                         $sqlCode = "UPDATE db_books SET bookShopLink = '$webBookShopLink' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -108,7 +108,7 @@
                         }
 
                     }else{
-                        echo "<h4>Novo link para compra é muito pequeno!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Link de compra precisa de ao menos 16 caracteres!');</script>";
 
                     }
 
@@ -119,7 +119,7 @@
                         $webBookReleaseDate = $dbConnection->real_escape_string($_POST["inputBookReleaseDate"]);
 
                         $sqlCode = "UPDATE db_books SET bookReleaseDate = '$webBookReleaseDate' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -127,7 +127,7 @@
                         }
 
                     }else{
-                        echo "<h4>Nova data está em formato incorreto!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Data de publicação deve seguir o seguinte formato:\n01/01/2000');</script>";
 
                     }
 
@@ -138,7 +138,7 @@
                         $webBookTitle = $dbConnection->real_escape_string($_POST["inputBookTitle"]);
 
                         $sqlCode = "UPDATE db_books SET bookTitle = '$webBookTitle' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error ."</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -146,24 +146,24 @@
                         }
 
                     }else{
-                        echo "<h4>Novo titulo é muito pequeno!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Titulo precisa de ao menos 4 caracteres!');</script>";
 
                     }
 
                 }
 
                 if($sucess > 6){
-                    echo "<h4>Alterações realizadas com sucesso!</h4>";
+                    echo "<script type = 'text/javascript'>alert('Alterações foram realizadas!');</script>";
 
                 }
 
             }else{
-                echo "<h4>Não há livros com esse titulo para alterar!</h4>";
+                echo "<script type = 'text/javascript'>alert('Livro não foi encontrado para alteração!');</script>";
 
             }
 
         }else{
-            echo "<h4>Titulo de livro para alteração é muito pequeno!</h4>";
+            echo "<script type = 'text/javascript'>alert('Titulo escolhido para alteração precisa de ao menos 4 caracteres!');</script>";
 
         }
 

@@ -6,7 +6,7 @@
     }
 
     if(!isset($_SESSION["userId"])){
-        die("<h4>Você não está logado no sistema!</h4><a href = 'login.php'><h4>Entre por aqui</h4></a>");
+        header("Location: login.php");
     }
 
     if(isset($_POST["inputBookTitle"])){
@@ -15,29 +15,29 @@
                 $webBookTitle = $dbConnection->real_escape_string($_POST["inputBookTitle"]);
 
                 $sqlCode = "SELECT * FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webBookTitle'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                 if($sqlQuery->num_rows != 0){
                     $sqlCode = "DELETE FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webBookTitle'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                     if(!$dbConnection->error){
-                        echo "<h4>Livro removido da biblioteca!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Livro removido da biblioteca!');</script>";
 
                     }
 
                 }else{
-                    echo "<h4>Livro não encontrado!</h4>";
+                    echo "<script type = 'text/javascript'>alert('Livro não foi encontrado na biblioteca!');</script>";
 
                 }
 
             }else{
-                echo "<h4>Titulo do livro é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Titulo precisa de ao menos 4 caracteres!');</script>";
 
             }
 
         }else{
-            echo "<h4>Preencha o campo de titulo do livro para poder identifica-lo!</h4>";
+            echo "<script type = 'text/javascript'>alert('Preencha o campo de titulo para poder identificá-lo!');</script>";
 
         }
 

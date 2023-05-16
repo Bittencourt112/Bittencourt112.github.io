@@ -6,7 +6,7 @@
     }
 
     if(!isset($_SESSION["userId"])){
-        die("<h4>Você não está logado no sistema!</h4><a href = 'login.php'><h4>Entre por aqui</h4></a>");
+        header("Location: login.php");
     }
 
     $sucess = 0;
@@ -17,44 +17,44 @@
             $webUserPassword = hash("sha512", $webUserPassword);
 
             $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}' AND userPassword = '$webUserPassword'";
-            $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
             if($sqlQuery->num_rows != 0){
                 if(strlen($_POST["inputNewName"]) != 0){
                     if(strlen($_POST["inputNewName"]) > 7){
-                    $webUserNewName = $dbConnection->real_escape_string($_POST["inputNewName"]);
+                        $webUserNewName = $dbConnection->real_escape_string($_POST["inputNewName"]);
 
-                    $sqlCode = "UPDATE db_users SET userName = '$webUserNewName' WHERE userId = '{$_SESSION['userId']}'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                        $sqlCode = "UPDATE db_users SET userName = '$webUserNewName' WHERE userId = '{$_SESSION['userId']}'";
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
-                    $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                        $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}'";
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
-                    if(!$dbConnection->error){
-                        $webUserData = $sqlQuery->fetch_assoc();
+                        if(!$dbConnection->error){
+                            $webUserData = $sqlQuery->fetch_assoc();
 
-                        $_SESSION["userName"] = $webUserData["userName"];
+                            $_SESSION["userName"] = $webUserData["userName"];
 
-                        $sucess++;
+                            $sucess++;
 
-                    }
+                        }
 
                     }else{
-                        echo "<h4>Nome inserido é muito pequeno!<h4>";
+                        echo "<script type = 'text/javascript'>alert('Nome precisa de ao menos 8 caracteres!');</script>";
                     }
 
                 }
 
                 if(strlen($_POST["inputNewPhoneNumber"]) != 0){
-                    if(strlen($_POST["inputNewPhoneNumber"]) > 8){
+                    if(strlen($_POST["inputNewPhoneNumber"]) > 10){
                         $webUserNewPhoneNumber = $dbConnection->real_escape_string($_POST["inputNewPhoneNumber"]);
 
                         $sqlCode = "SELECT * FROM db_users WHERE userPhoneNumber = '$webUserNewPhoneNumber'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if($sqlQuery->num_rows == 0){
                             $sqlCode = "UPDATE db_users SET userPhoneNumber = '$webUserNewPhoneNumber' WHERE userId = '{$_SESSION['userId']}'";
-                            $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                             if(!$dbConnection->error){
                                 $sucess++;
@@ -62,12 +62,12 @@
                             }
 
                         }else{
-                            echo "<h4>Telefone inserido já cadastrado!<h4>";
+                            echo "<script type = 'text/javascript'>alert('Telefone já cadastrado!');</script>";
 
                         }
 
                     }else{
-                        echo "<h4>Telefone inserido é muito pequeno!<h4>";
+                        echo "<script type = 'text/javascript'>alert('Telefone precisa de ao menos 9 digitos e o seu DDD!');</script>";
 
                     }
 
@@ -78,11 +78,11 @@
                         $webUserNewEmail = $dbConnection->real_escape_string($_POST["inputNewEmail"]);
 
                         $sqlCode = "SELECT * FROM db_users WHERE userEmail = '$webUserNewEmail'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
                 
                         if($sqlQuery->num_rows == 0){
                             $sqlCode = "UPDATE db_users SET userEmail = '$webUserNewEmail' WHERE userId = '{$_SESSION['userId']}'";
-                            $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                             if(!$dbConnection->error){
                                 $sucess++;
@@ -90,12 +90,12 @@
                             }
 
                         }else{
-                            echo "<h4>Email inserido já cadastrado!<h4>";
+                            echo "<script type = 'text/javascript'>alert('Email já cadastrado!');</script>";
 
                         }
 
                     }else{
-                        echo "<h4>Email inserido é muito pequeno!<h4>";
+                        echo "<script type = 'text/javascript'>alert('Email precisa de ao menos 10 caracteres!');</script>";
 
                     }
 
@@ -107,7 +107,7 @@
                         $webUserNewPassword = hash("sha512", $webUserNewPassword);
 
                         $sqlCode = "UPDATE db_users SET userPassword = '$webUserNewPassword' WHERE userId = '{$_SESSION['userId']}'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -115,24 +115,24 @@
                         }
 
                     }else{
-                        echo "<h4>Nova senha é muito pequena!<h4>";
+                        echo "<script type = 'text/javascript'>alert('Senha precisa de ao menos 8 caracteres!');</script>";
 
                     }
 
                 }
 
                 if($sucess > 0){
-                    echo "<h4>Alterações realizadas com sucesso!<h4>";
+                    echo "<script type = 'text/javascript'>alert('Alterações foram realizadas!');</script>";
 
                 }
 
             }else{
-                echo "<h4>Senha atual incorreta! Alterações foram canceladas.<h4>";
+                echo "<script type = 'text/javascript'>alert('Senha incorreta! Alterações foram canceladas!');</script>";
 
             }
 
         }else{
-            echo "<h4>Preencha o campo de senha atual para realizar alterações!<h4>";
+            echo "<script type = 'text/javascript'>alert('Preencha o campo de senha atual para realizar alterações!');</script>";
 
         }
 

@@ -6,7 +6,7 @@
     }
 
     if(!isset($_SESSION["userId"])){
-        die("<h4>Você não está logado no sistema!</h4><a href = 'login.php'><h4>Entre por aqui</h4></a>");
+        header("Location: login.php");
     }
 
 ?>
@@ -53,7 +53,7 @@
 
                         if(strlen($webBookSearch) == 1){
                             $sqlCode = "SELECT * FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle LIKE '$webBookSearch%' ORDER BY bookTitle";
-                            $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                             if($sqlQuery->num_rows != 0){
                                 while($row = mysqli_fetch_assoc($sqlQuery)){
@@ -67,7 +67,7 @@
 
                         }else if(strlen($webBookSearch) > 1){
                             $sqlCode = "SELECT * FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle LIKE '%$webBookSearch%' ORDER BY bookTitle";
-                            $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                             if($sqlQuery->num_rows != 0){
                                 while($row = mysqli_fetch_assoc($sqlQuery)){
@@ -84,7 +84,7 @@
             
                     }else{
                         $sqlCode = "SELECT * FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' ORDER BY bookTitle";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                         if($sqlQuery->num_rows != 0){
                             while($row = mysqli_fetch_assoc($sqlQuery)){

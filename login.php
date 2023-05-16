@@ -18,7 +18,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Email inserido é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Email precisa de ao menos 10 caracteres!');</script>";
 
             }
 
@@ -29,13 +29,13 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Senha inserida é muito pequena!</h4>";
+                echo "<script type = 'text/javascript'>alert('Senha precisa de ao menos 8 caracteres!');</script>";
 
             }
 
             if($sucess > 1){
                 $sqlCode = "SELECT * FROM db_users WHERE userEmail = '$webUserEmail' AND userPassword = '$webUserPassword'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                 if($sqlQuery->num_rows != 0){
                     $webUserData = $sqlQuery->fetch_assoc();
@@ -46,14 +46,14 @@
                     header("Location: home.php");
 
                 }else{
-                    echo "<h4>Dados inseridos não estão cadastrados!</h4>";
+                    echo "<script type = 'text/javascript'>alert('Dados inseridos não estão cadastrados!');</script>";
 
                 }
 
             }
     
         }else{
-            echo "<h4>Preencha todos os campos!</h4>";
+            echo "<script type = 'text/javascript'>alert('Preencha todos os campos!');</script>";
 
         }
     }

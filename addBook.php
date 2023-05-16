@@ -6,7 +6,7 @@
     }
 
     if(!isset($_SESSION["userId"])){
-        die("<h4>Você não está logado no sistema!</h4><a href = 'login.php'><h4>Entre por aqui</h4></a>");
+        header("Location: login.php");
     }
 
     $sucess = 0;
@@ -19,7 +19,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Titulo é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Titulo precisa de ao menos 4 caracteres!');</script>";
 
             }
 
@@ -29,7 +29,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Nome do autor é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Nome do autor precisa de ao menos 8 caracteres!');</script>";
 
             }
 
@@ -39,7 +39,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Sinopse é muito pequena!</h4>";
+                echo "<script type = 'text/javascript'>alert('Sinopse precisa de ao menos 128 caracteres!');</script>";
 
             }
 
@@ -49,7 +49,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Nome da editora é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Nome da editora precisa de ao menos 4 caracteres!');</script>";
 
             }
 
@@ -59,7 +59,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Link de imagem é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Link da imagem precisa de ao menos 16 caracteres!');</script>";
 
             }
 
@@ -69,7 +69,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Link de compra é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Link de compra precisa de ao menos 16 caracteres!');</script>";
 
             }
 
@@ -79,23 +79,23 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Data está em formato incorreto!</h4>";
+                echo "<script type = 'text/javascript'>alert('Data de publicação deve seguir o seguinte formato: 01/01/2000');</script>";
 
             }
 
             if($sucess > 6){
                 $sqlCode = "INSERT INTO db_books (bookTitle, bookAuthor, bookSummary, bookReleaseDate, bookPublisher, bookImageLink, bookShopLink, bookOwnerId) VALUES ('$webBookTitle', '$webBookAuthor', '$webBookSummary', '$webBookReleaseDate', '$webBookPublisher', '$webBookImageLink', '$webBookShopLink', '{$_SESSION['userId']}')";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                 if(!$dbConnection->error){
-                    echo "<h4>Livro adicionado a biblioteca!</h4>";
+                    echo "<script type = 'text/javascript'>alert('Livro inserido na biblioteca!');</script>";
 
                 }
 
             }
 
         }else{
-            echo "<h4>Preencha todos os campos!</h4>";
+            echo "<script type = 'text/javascript'>alert('Preencha todos os campos!');</script>";
 
         }
 

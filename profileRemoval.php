@@ -6,7 +6,7 @@
     }
 
     if(!isset($_SESSION["userId"])){
-        die("<h4>Você não está logado no sistema!</h4><a href = 'login.php'><h4>Entre por aqui</h4></a>");
+        header("Location: login.php");
     }
 
     if(isset($_POST["inputPassword"])){
@@ -16,14 +16,14 @@
                 $webUserPassword = hash("sha512", $webUserPassword);
     
                 $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}' AND userPassword = '$webUserPassword'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
     
                 if($sqlQuery->num_rows != 0){
                     $sqlCode = "DELETE FROM db_users WHERE userId = '{$_SESSION['userId']}'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
     
                     $sqlCode = "DELETE FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
     
                     if(!$dbConnection->error){
                         header("Location: logout.php");
@@ -31,17 +31,17 @@
                     }
     
                 }else{
-                    echo "<h4>Senha incorreta!</h4>";
+                    echo "<script type = 'text/javascript'>alert('Senha incorreta!');</script>";
     
                 }
     
             }else{
-                echo "<h4>Senha inserida é muito pequena!</h4>";
+                echo "<script type = 'text/javascript'>alert('Senha precisa de ao menos 8 caracteres!');</script>";
     
             }
 
         }else{
-            echo "<h4>Preencha o campo!</h4>";
+            echo "<script type = 'text/javascript'>alert('Preencha o campo!');</script>";
 
         }
 

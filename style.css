@@ -1,6 +1,6 @@
 body {
     font-family: arial;
-    background-color: rgba(0%, 45%, 50%, 0.1);
+    background-color: rgba(100%, 100%, 100%, 1);
 
 }
 
@@ -10,12 +10,14 @@ body {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid rgba(50%, 50%, 50%, 0.5);
 
 }
 
 .div01 {
     background-color: rgba(100%, 100%, 100%, 1);
     text-align: center;
+    border: 1px solid rgba(50%, 50%, 50%, 0.5);
     
 }
 
@@ -43,6 +45,11 @@ td {
 
 }
 
+#menuTd:hover {
+    color: rgba(0%, 45%, 50%, 1);
+
+}
+
 #mainTd {
     text-align: left;
     font-size: x-large;
@@ -51,9 +58,7 @@ td {
 }
 
 h2 {
-    background-color: rgba(0%, 20%, 25%, 1);
-    color: rgba(100%, 100%, 100%, 1);
-    padding: 5px;
+    color: rgba(0%, 20%, 25%, 1);
 
 }
 
@@ -104,13 +109,24 @@ input::placeholder{
     border: 0;
     padding: 10px;
     background-color: rgba(0%, 20%, 25%, 1);
-    color: white;
+    color: rgba(100%, 100%, 100%, 1);
     font-weight: bold;
+
+}
+
+#button01:hover {
+    color: rgba(0%, 45%, 50%, 1);
 
 }
 
 a {
     color: rgba(0%, 20%, 25%, 1);
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: rgba(0%, 45%, 50%, 1);
 
 }
 
@@ -132,5 +148,10 @@ li {
 
 img {
     padding: 5px;
+
+}
+
+img:hover {
+    background-color: rgba(0%, 45%, 50%, 1);
 
 }

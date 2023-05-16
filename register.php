@@ -18,7 +18,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Nome inserido é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Nome precisa de ao menos 8 caracteres!');</script>";
 
             }
 
@@ -28,7 +28,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Telefone inserido é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Telefone precisa de ao menos 9 digitos e o seu DDD!');</script>";
 
             }
 
@@ -38,7 +38,7 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Email inserido é muito pequeno!</h4>";
+                echo "<script type = 'text/javascript'>alert('Email precisa de ao menos 10 caracteres!');</script>";
 
             }
 
@@ -49,32 +49,32 @@
                 $sucess++;
 
             }else{
-                echo "<h4>Senha inserida é muito pequena!</h4>";
+                echo "<script type = 'text/javascript'>alert('Senha precisa de ao menos 8 caracteres!');</script>";
 
             }
 
             if($sucess > 3){
                 $sqlCode = "SELECT * FROM db_users WHERE userPhoneNumber = '$webUserPhoneNumber' AND userEmail = '$webUserEmail'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução do código SQL: " . $dbConnection->error . "</h4>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                 if($sqlQuery->num_rows == 0){
                     $sqlCode = "INSERT INTO db_users (userName, userPhoneNumber, userEmail, userPassword) VALUES ('$webUserName', '$webUserPhoneNumber', '$webUserEmail', '$webUserPassword')";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<h4>Falha na execução de código SQL: " . $dbConnection->error ."</h4>");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
 
                     if(!$dbConnection->error){
-                        echo "<h4>Cadastro realizado com sucesso!</h4>";
+                        echo "<script type = 'text/javascript'>alert('Cadastrado com sucesso!');</script>";
 
                     }
 
                 }else{
-                    echo "<h4>Telefone e email inseridos já estão cadastrados!</h4>";
+                    echo "<script type = 'text/javascript'>alert('Telefone e email já cadastrados!');</script>";
 
                 }
 
             }
 
         }else{
-            echo "<h4>Preencha todos os campos!</h4>";
+            echo "<script type = 'text/javascript'>alert('Preencha todos os campos!');</script>";
 
         }
     }
