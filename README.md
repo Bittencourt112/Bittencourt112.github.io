@@ -11,7 +11,7 @@
 </ul>
 <h3>Ferramentas / Tecnologias</h3>
 <ul>
-   <li>PHP + HTML + CSS</li>
+   <li>PHP + HTML + CSS + JS</li>
    <li>MySQL (MariaDB)</li>
    <li>Visual Studio Code</li>
    <li>XAMPP</li>
