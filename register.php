@@ -59,7 +59,7 @@
 
                 if($sqlQuery->num_rows == 0){
                     $sqlCode = "INSERT INTO db_users (userName, userPhoneNumber, userEmail, userPassword) VALUES ('$webUserName', '$webUserPhoneNumber', '$webUserEmail', '$webUserPassword')";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                     if(!$dbConnection->error){
                         echo "<script type = 'text/javascript'>alert('Cadastrado com sucesso!');</script>";

@@ -17,7 +17,7 @@
             $webUserPassword = hash("sha512", $webUserPassword);
 
             $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}' AND userPassword = '$webUserPassword'";
-            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
             if($sqlQuery->num_rows != 0){
                 if(strlen($_POST["inputNewName"]) != 0){
@@ -25,10 +25,10 @@
                         $webUserNewName = $dbConnection->real_escape_string($_POST["inputNewName"]);
 
                         $sqlCode = "UPDATE db_users SET userName = '$webUserNewName' WHERE userId = '{$_SESSION['userId']}'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $webUserData = $sqlQuery->fetch_assoc();
@@ -50,11 +50,11 @@
                         $webUserNewPhoneNumber = $dbConnection->real_escape_string($_POST["inputNewPhoneNumber"]);
 
                         $sqlCode = "SELECT * FROM db_users WHERE userPhoneNumber = '$webUserNewPhoneNumber'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if($sqlQuery->num_rows == 0){
                             $sqlCode = "UPDATE db_users SET userPhoneNumber = '$webUserNewPhoneNumber' WHERE userId = '{$_SESSION['userId']}'";
-                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                             if(!$dbConnection->error){
                                 $sucess++;
@@ -78,11 +78,11 @@
                         $webUserNewEmail = $dbConnection->real_escape_string($_POST["inputNewEmail"]);
 
                         $sqlCode = "SELECT * FROM db_users WHERE userEmail = '$webUserNewEmail'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
                 
                         if($sqlQuery->num_rows == 0){
                             $sqlCode = "UPDATE db_users SET userEmail = '$webUserNewEmail' WHERE userId = '{$_SESSION['userId']}'";
-                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                             if(!$dbConnection->error){
                                 $sucess++;
@@ -107,7 +107,7 @@
                         $webUserNewPassword = hash("sha512", $webUserNewPassword);
 
                         $sqlCode = "UPDATE db_users SET userPassword = '$webUserNewPassword' WHERE userId = '{$_SESSION['userId']}'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;

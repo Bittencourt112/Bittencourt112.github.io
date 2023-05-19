@@ -16,7 +16,7 @@
             $webOldBookTitle = $dbConnection->real_escape_string($_POST["inputOldBookTitle"]);
 
             $sqlCode = "SELECT * FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+            $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
             if($sqlQuery->num_rows != 0){
                 if(strlen($_POST["inputBookAuthor"]) != 0){
@@ -24,7 +24,7 @@
                         $webBookAuthor = $dbConnection->real_escape_string($_POST["inputBookAuthor"]);
 
                         $sqlCode = "UPDATE db_books SET bookAuthor = '$webBookAuthor' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -43,7 +43,7 @@
                         $webBookSummary = $dbConnection->real_escape_string($_POST["inputBookSummary"]);
 
                         $sqlCode = "UPDATE db_books SET bookSummary = '$webBookSummary' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -62,7 +62,7 @@
                         $webBookPublisher = $dbConnection->real_escape_string($_POST["inputBookPublisher"]);
 
                         $sqlCode = "UPDATE db_books SET bookPublisher = '$webBookPublisher' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -81,7 +81,7 @@
                         $webBookImageLink = $dbConnection->real_escape_string($_POST["inputBookImageLink"]);
 
                         $sqlCode = "UPDATE db_books SET bookImageLink = '$webBookImageLink' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -100,7 +100,7 @@
                         $webBookShopLink = $dbConnection->real_escape_string($_POST["inputBookShopLink"]);
 
                         $sqlCode = "UPDATE db_books SET bookShopLink = '$webBookShopLink' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -119,7 +119,7 @@
                         $webBookReleaseDate = $dbConnection->real_escape_string($_POST["inputBookReleaseDate"]);
 
                         $sqlCode = "UPDATE db_books SET bookReleaseDate = '$webBookReleaseDate' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;
@@ -138,7 +138,7 @@
                         $webBookTitle = $dbConnection->real_escape_string($_POST["inputBookTitle"]);
 
                         $sqlCode = "UPDATE db_books SET bookTitle = '$webBookTitle' WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webOldBookTitle'";
-                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                        $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                         if(!$dbConnection->error){
                             $sucess++;

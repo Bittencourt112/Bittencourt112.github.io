@@ -16,14 +16,14 @@
                 $webUserPassword = hash("sha512", $webUserPassword);
     
                 $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}' AND userPassword = '$webUserPassword'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
     
                 if($sqlQuery->num_rows != 0){
                     $sqlCode = "DELETE FROM db_users WHERE userId = '{$_SESSION['userId']}'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
     
                     $sqlCode = "DELETE FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
     
                     if(!$dbConnection->error){
                         header("Location: logout.php");

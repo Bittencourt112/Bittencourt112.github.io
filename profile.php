@@ -40,7 +40,7 @@
             <hr>
                 <?php
                     $sqlCode = "SELECT * FROM db_users WHERE userId = '{$_SESSION['userId']}'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
                    
                     $userData = $sqlQuery->fetch_assoc();
 

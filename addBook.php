@@ -85,7 +85,7 @@
 
             if($sucess > 6){
                 $sqlCode = "INSERT INTO db_books (bookTitle, bookAuthor, bookSummary, bookReleaseDate, bookPublisher, bookImageLink, bookShopLink, bookOwnerId) VALUES ('$webBookTitle', '$webBookAuthor', '$webBookSummary', '$webBookReleaseDate', '$webBookPublisher', '$webBookImageLink', '$webBookShopLink', '{$_SESSION['userId']}')";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                 if(!$dbConnection->error){
                     echo "<script type = 'text/javascript'>alert('Livro inserido na biblioteca!');</script>";

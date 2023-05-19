@@ -35,7 +35,7 @@
 
             if($sucess > 1){
                 $sqlCode = "SELECT * FROM db_users WHERE userEmail = '$webUserEmail' AND userPassword = '$webUserPassword'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                 if($sqlQuery->num_rows != 0){
                     $webUserData = $sqlQuery->fetch_assoc();

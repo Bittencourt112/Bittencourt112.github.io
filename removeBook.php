@@ -15,11 +15,11 @@
                 $webBookTitle = $dbConnection->real_escape_string($_POST["inputBookTitle"]);
 
                 $sqlCode = "SELECT * FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webBookTitle'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                 if($sqlQuery->num_rows != 0){
                     $sqlCode = "DELETE FROM db_books WHERE bookOwnerId = '{$_SESSION['userId']}' AND bookTitle = '$webBookTitle'";
-                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script");
+                    $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                     if(!$dbConnection->error){
                         echo "<script type = 'text/javascript'>alert('Livro removido da biblioteca!');</script>";

@@ -40,7 +40,7 @@
             <hr>
             <?php
                 $sqlCode = "SELECT * FROM db_books WHERE bookId = '{$_GET['id']}'";
-                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+                $sqlQuery = $dbConnection->query($sqlCode) or die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
                 $bookData = $sqlQuery->fetch_assoc();
 

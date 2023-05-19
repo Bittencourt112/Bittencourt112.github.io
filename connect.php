@@ -7,7 +7,7 @@ $dbName = "mybookbase";
 $dbConnection = new mysqli($dbHost, $dbUserName, $dbPassword, $dbName);
 
 if($dbConnection->error){
-    die("<script type = 'text/javascript'>alert($dbConnection->error);</script>");
+    die("<script type = 'text/javascript'>alert('$dbConnection->error');</script>");
 
 }
 
