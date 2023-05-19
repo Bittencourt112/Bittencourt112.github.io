@@ -11,8 +11,8 @@
 </ul>
 <h3>Ferramentas / Tecnologias</h3>
 <ul>
-   <li>PHP + HTML + CSS + JS</li>
-   <li>MySQL (MariaDB)</li>
-   <li>Visual Studio Code</li>
-   <li>XAMPP</li>
+   <li>HTML + CSS + JS (Corpo ,aparência e funcionalidade do site)</li>
+   <li>PHP + MySQL (Conexão e operações do sistema com a base de dados)</li>
+   <li>Visual Studio Code (Desenvolvimento de código)</li>
+   <li>XAMPP (Servidor e base de dados local para testes)</li>
 </ul>
