@@ -152,7 +152,7 @@
 
                 }
 
-                if($sucess > 6){
+                if($sucess > 0){
                     echo "<script type = 'text/javascript'>alert('Alterações foram realizadas!');</script>";
 
                 }
